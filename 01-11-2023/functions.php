@@ -38,7 +38,11 @@ add_action('wp_enqueue_scripts', 'your_theme_enqueue_styles');
   add_action('et_builder_ready', 'et_pb_register_custom_video_popup_module');
 
   function enqueue_custom_script() {
-    
+    wp_enqueue_style( 'child-style', 
+      get_stylesheet_directory_uri() . '/style.css', 
+      array($parent_style), 
+      time() 
+    );
     
 
 }
